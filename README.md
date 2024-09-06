@@ -1,8 +1,8 @@
-# 【Auth.js/NextAuth】NextAuthのadapter機能を追加して登録ユーザーをデータベースで管理する
+# 【Auth.js/NextAuth】NextAuth v5のadapter機能を追加して登録ユーザーをデータベースで管理する
 
 ## YouTube
 
-[!["【Auth.js/NextAuth】NextAuthのadapter機能を追加して登録ユーザーをデータベースで管理する"](https://i.ytimg.com/vi/<id>/maxresdefault.jpg)](https://youtu.be/<id>)
+[!["【Auth.js/NextAuth】NextAuth v5のadapter機能を追加して登録ユーザーをデータベースで管理する"](https://i.ytimg.com/vi/Jzkt_FVBdwA/maxresdefault.jpg)](https://youtu.be/Jzkt_FVBdwA)
 
 ## 技術選定
 
@@ -40,7 +40,7 @@ AUTH_GOOGLE_SECRET=
 ### データベースを作成
 
 ```bash
-npx wrangler d1 create auth-adapter-db
+npx wrangler d1 create next-auth-db
 ```
 
 ### wrangler.toml に追記
@@ -48,7 +48,7 @@ npx wrangler d1 create auth-adapter-db
 ```toml
 [[d1_databases]]
 binding = "DB"
-database_name = "auth-adapter-db"
+database_name = "next-auth-db"
 database_id = "<unique-ID-for-your-database>"
 ```
 
@@ -63,11 +63,11 @@ npx drizzle-kit generate
 ### ローカルデータベースにテーブルを作成
 
 ```bash
-npx wrangler d1 migrations apply auth-adapter-db --local
+npx wrangler d1 migrations apply next-auth-db --local
 ```
 
 ### リモートデータベースにテーブルを作成
 
 ```bash
-npx wrangler d1 migrations apply auth-adapter-db --remote
+npx wrangler d1 migrations apply next-auth-db --remote
 ```

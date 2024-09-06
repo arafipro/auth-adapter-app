@@ -2,6 +2,8 @@ import { signIn } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
+export const runtime = "edge";
+
 export default function page() {
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-2">
